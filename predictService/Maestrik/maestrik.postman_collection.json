@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "daa38afb-d913-498d-9747-f5510fc10134",
+		"name": "maestrik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/cluster/clusterUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userIdentifier\":\"1\",\n\t\"last_buy\":1000,\n\t\"times_buy\":170,\n\t\"total_buyed\":33400.40\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/cluster/clusterUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cluster",
+						"clusterUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/cluster/upSellRecomnedations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cluster\":0,\n\t\"subCluster\":0,\n\t\"n\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/cluster/upSellRecomnedations",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"cluster",
+						"upSellRecomnedations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
