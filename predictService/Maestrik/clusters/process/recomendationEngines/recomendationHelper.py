@@ -27,14 +27,15 @@ class RecomendationHelper(object):
       invoices = invoices['InvoiceNo']
 
       recomendedItems = self.userClusterStockTable[self.userClusterStockTable['InvoiceNo'].isin(invoices)].groupby(['StockCode'])['Quantity'].sum().sort_values(ascending=False)
-      if itemTest:
-        recomendedItems = recomendedItems.drop(itemTest)
-        itemsTfidf = tfidf.transform(recomendedItems['Description'])
-        selectedItemTfidf = tfidf.transform(products[itemTest]['Description'])
+      #if itemTest:
+      #  recomendedItems = recomendedItems.drop(itemTest)
+      #  itemsTfidf = tfidf.transform(recomendedItems['Description'])
+      #  selectedItemTfidf = tfidf.transform(products[itemTest]['Description'])
         
       result = self.products[self.products['StockCode'].isin(recomendedItems.head().index)][:n]
       tmpList=[]
       print(result)
+      result = result[result['StockCode'] != itemTest]
       for item in result.iterrows():
 
         tmpList.append({"stockCode": item[1]['StockCode'], "description":item[1]['Description']})
