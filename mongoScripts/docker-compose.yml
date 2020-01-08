@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  web:
+  spark:
     build: .
     environment:
       - SPARK_MODE=master
