@@ -13,7 +13,7 @@ docker-compose up
 Esta carpeta contiene los respectivos análisis exploratorios, entrenamientos y transformaciones de información necesarias para crear y procesar el dataset de forma que permita obtener 'insights'
 - clusters_and_RFM_score: este notebook entrena los clusters de kmeans y GaussianMixture
 - dataAnalisis: insights sobre dataset con clusters y RFM 
-- SalesPrediction: analisis y forecasting usando sarimax(Seasonal Autoregressive Integrated Moving Average)
+- SalesPrediction: análisis y forecasting usando sarimax(Seasonal Autoregressive Integrated Moving Average)
 
 ## Predict Service
 
@@ -25,4 +25,4 @@ ejecutar en el directorio ./predictService/Maestrik/
 docker-compose up
 ```
 
-para probar los request importar postman en el siguente archivo ./predictService/Maestrik/maestrik.postman_collection.json
+para probar los request importar postman en el síguente archivo ./predictService/Maestrik/maestrik.postman_collection.json
