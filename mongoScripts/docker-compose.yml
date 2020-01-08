@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+    command: spark-submit --packages org.mongodb.spark:mongo-spark-connector_2.11:2.4.1 importdatasetwithclusterstomongo.py 
+    volumes:
+      - .:/code
+    ports:
+      - "7000:7000"
